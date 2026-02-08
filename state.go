@@ -1,13 +1,11 @@
 package breaker
 
-type State uint
+import "github.com/shuklasaharsh/circuitbreaker/storage"
+
+type State = storage.State
 
 const (
-	StateClosed State = iota
-	StateOpen
-	StateHalfOpen
+	StateClosed   = storage.StateClosed
+	StateOpen     = storage.StateOpen
+	StateHalfOpen = storage.StateHalfOpen
 )
-
-func (s State) String() string {
-	return []string{"Closed", "Open", "Half Open"}[s]
-}
